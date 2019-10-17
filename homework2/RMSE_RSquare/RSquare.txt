@@ -1,0 +1,1 @@
+Maior variância dos dados diminui o valor de R²

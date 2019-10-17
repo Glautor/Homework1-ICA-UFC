@@ -1,0 +1,63 @@
+## OLS
+#Treino
+    > perfTreinoOLSCV5
+        RMSE   Rsquare
+        0.5028032 0.9395816
+    > perfTreinoOLSCV10
+        RMSE   Rsquare
+        0.5028032 0.9395816
+#Teste
+    > perfTesteOLSCV5
+        RMSE   Rsquare
+        0.8046234 0.8514633
+    > perfTesteOLSCV10
+        RMSE   Rsquare
+        0.8046234 0.8514633
+
+## L2
+#Treino
+    > perfL2TreinoCV5
+        RMSE   Rsquare
+        0.5272376 0.9336347
+    > perfL2TreinoCV10
+        RMSE   Rsquare
+        0.5272376 0.9336347
+#Teste
+    > perfL2TesteCV5
+        RMSE   Rsquare
+        0.7490233 0.8707192
+    > perfL2TesteCV10
+        RMSE   Rsquare
+        0.7490233 0.8707192
+
+## PLS
+#Treino
+    > perfPLSTreinoCV5
+        RMSE   Rsquare
+        0.5499044 0.9277317
+    > perfPLSTreinoCV10
+        RMSE   Rsquare
+        0.5499044 0.9277317
+#Teste
+    > perfPLSTesteCV5
+        RMSE   Rsquare
+        0.7550997 0.8683802
+    > perfPLSTesteCV10
+        RMSE   Rsquare
+        0.7550997 0.8683802
+
+## PCR
+#Treino
+> perfPCRTreinoCV5
+      RMSE  Rsquare
+      1.279863 0.608528
+> perfPCRTreinoCV10
+      RMSE   Rsquare
+      1.287816 0.6036482
+#Teste
+> perfPCRTesteCV5
+      RMSE   Rsquare
+      1.263886 0.6337896
+> perfPCRTesteCV10
+      RMSE  Rsquare
+      1.279963 0.622997

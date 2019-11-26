@@ -1,0 +1,39 @@
+### 2ª questão ###
+
+### Atividade 2 ###
+
+## Introdução ##
+Nessa segunda parte foi realizado um aprendizado de um modelo de classificação não linear utilizando os preditores do conjunto de treino apresentados neste relatório. Foi escolhido o método k-nearest neighbors para a realização da atividade, este por sua vez não apresenta um nível de complexidade alto, sua ideia central se baseia numa medidade de similaridade, normalmente uma medidade de distância, como a distância Euclidiana, para dizer a qual classe o dado se pertence.
+
+## Problemas em que pode ser empregado ##
+O KNN pode ser utilizado em diversos tipos de aplicações, tais como saúde, finanças, ciência política e reconhecimento de imagem e de vídeo. Para ilutrar a situação, podemos pegar um exemplo da área de saúde, em que, dado um conjunto de dados de pacientes, o algoritmo pode classificá-los como doente ou não doente.
+
+## Quando o algoritmo pode ser utilizado ##
+O algoritmo pode ser usado tanto para problemas preditivos de classificação, em que a saída é discreta, quanto para problemas preditivos de regressão, com saída contínua. Mas seu uso é mais comum em problemas de classificação.
+
+## Funcionamento ##
+O funcionamento do algoritmo condiz com o nome. Tem-se um número de vizinhos mais próximos K, sendo esse o principal valor decisivo. No caso de K = 1, é declarada uma classificação especial, denominada de algoritmo do vizinho mais próximo, sendo este o caso mais simples possível, mas o K pode ser alterado a fim de se conseguir uma melhor predição, como foi feito neste relatório. Na imagem "NUMERO_DA_IMAGEM_K_VIZNHO_MAIS_PROX" é possível observar o caso do vizinho mais próximo com clareza. Pegue o triângulo como sendo a variável G, que representa o que se quer classificar. A princípio, é necessário encontrar o ponto mais próximo de de G, que seria o quadrado, a partir disso, é possível classificar G como do tipo quadrado, pois ele, em teoria, possui a classificação igual a classificação do seu vizinho mais próximo. Já se K > 1, então a classe a ser escolhida é pela maioria dos vizinhos mais próximos, como pode ser visto na imagem "NUMERO_DA_IMAGEM_K_VIZINHOS_PROXIMOS". No caso de empate na classificação do número de vizinhos, pode ser feito um sorteio aleatório para definir a classificação.
+
+
+## A atividade ##
+Nessa atividade foram requisitados dois importantes dados, a matriz de confusão e a fração derals dos preditores corretos. Para realizar a tarefa, foi verificado a variância de algumas variáveis preditoras para sabe se haveria necessidade de colocar os dados numa mesma escala, para se obter um algoritmo mais performático. Encontramos no conjunto de treino os seguintes valores para algumas variáveis preditivas.
+
+--  Posição da Variável Preditiva  --  Variância
+-- 				 1			 	   --  1.016723
+-- 				 2			 	   --  0.03638266
+-- 				 3			 	   --  0.8112048
+
+Foi realizado o mesmo processo para o conjunto de teste
+
+--  Posição da Variável Preditiva  --  Variância
+-- 				 1			 	   --  1.271028
+-- 				 2			 	   --  0.02634743
+-- 				 3			 	   --  0.8651225
+
+A partir da análise dos dados acima, é possível perceber que a escala não está padronizada, para isso, foi preciso realizar esse procedimento. Então, após aplicar uma função de scale em cima tanto do conjunto de treino quanto do conjunto de teste, foi necessário verificar a variância em cima das variáveis preditivas dos conjuntos supracitados, agora transformados. Logo, após esse processo, constatou-se que a variância estava padronizada com o valor de 1.
+
+A seguir fez-se necessário analisar o melhor valor de K para o nosso exemplo, para isso, foi realizado um loop que verificava o percentual de erro para cada valor de K entre 1 e 100. O gráfico com o resultado pode ser visto na imagem "NUMERO_DA_IMAGEM_K_PLOT". Ao fim deste procedimento, uma variável contendo todos os erros para valores de K entre 1 e 100 foi gerada. A análise desse gráfico nos retornou a informação de que o melhor valor de K foi 26, pois nesse ponto, o percentual de erro gerado foi o menor dentre os analisados, igual a 27,9%, o que rendeu uma taxa de acerto de 72,1%. O passo seguinte foi gerar a matriz de confusão, que pode ser vista na tabela "NUMERO_DA_TABELA_CONFUSION_MATRIX:
+
+previsoes      successful unsuccessful
+  successful          104           60
+  unsuccessful         85          269
